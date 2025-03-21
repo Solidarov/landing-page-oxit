@@ -85,6 +85,39 @@
               Зареєструватися на курси
             </strong>
           </h3>
+          <form class="form-group">
+            <div class="mb-3">
+              <label for="f_name">Ім'я</label><br>
+              <input type="text" class="form-control" id="f_name" name="f_name" placeholder="Ім'я">
+            </div>
+            
+            <div class="mb-3">
+              <label for="l_name">Прізвище</label><br>
+              <input type="text" class="form-control" id="l_name" name="l_name" placeholder="Прізвище">
+            </div>
+            
+            <div class="mb-3">
+              <label for="interests">Мене більше цікавить</label><br>
+              <input type="text" class="form-control" id="interests" name="interests" placeholder="developer or QA">
+            </div>
+
+            <div class="mb-3">
+              <label for="phone_number">Номер телефону</label><br>
+              <input type="tel" class="form-control" id="phone_number" name="phone_number" placeholder="+38 XXX XX XX XXX">
+            </div>
+
+            <div class="mb-3">
+              <label for="email">Email</label><br>
+              <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+            </div>
+
+            <div class="form-check mb-3">
+              <input type="checkbox" class="form-check-input" id="agree" name="agree" value="agree"> 
+              <label class="form-check-label" for="agree">Я погоджуюся із <a href="#" target="_blank">Політикою Конфіденційності</a></label>
+            </div>
+
+            <button type="submit" class="btn btn-primary rounded-pill" onclick="alert('Дякуємо за реєстрацію!')"> Подати заявку</button>
+          </form>
         </div>
         <div class="col-1"></div>
       </div>
