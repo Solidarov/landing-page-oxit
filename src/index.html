@@ -87,33 +87,45 @@
           </h3>
           <form class="form-group">
             <div class="mb-3">
-              <label for="f_name">Ім'я</label><br>
-              <input type="text" class="form-control" id="f_name" name="f_name" placeholder="Ім'я">
+              <label for="f_name">
+                Ім'я<img src="./assets/icons/required.png" alt="Required" class="required-icon ">
+              </label><br>
+              <input type="text" class="form-control" id="f_name" name="f_name" placeholder="Ім'я" required>
             </div>
             
             <div class="mb-3">
-              <label for="l_name">Прізвище</label><br>
-              <input type="text" class="form-control" id="l_name" name="l_name" placeholder="Прізвище">
+              <label for="l_name">
+                Прізвище<img src="./assets/icons/required.png" alt="Required" class="required-icon ">
+              </label><br>
+              <input type="text" class="form-control" id="l_name" name="l_name" placeholder="Прізвище" required>
             </div>
             
             <div class="mb-3">
-              <label for="interests">Мене більше цікавить</label><br>
-              <input type="text" class="form-control" id="interests" name="interests" placeholder="developer or QA">
+              <label for="interests">
+                Мене більше цікавить <img src="./assets/icons/required.png" alt="Required" class="required-icon">
+              </label><br>
+              <input type="text" class="form-control" id="interests" name="interests" placeholder="developer or QA" required>
             </div>
 
             <div class="mb-3">
-              <label for="phone_number">Номер телефону</label><br>
-              <input type="tel" class="form-control" id="phone_number" name="phone_number" placeholder="+38 XXX XX XX XXX">
+              <label for="phone_number">
+                Номер телефону<img src="./assets/icons/required.png" alt="Required" class="required-icon ">
+              </label><br>
+              <input type="tel" class="form-control" id="phone_number" name="phone_number" placeholder="+38 XXX XX XX XXX" required>
             </div>
 
             <div class="mb-3">
-              <label for="email">Email</label><br>
-              <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+              <label for="email">
+                Email<img src="./assets/icons/required.png" alt="Required" class="required-icon ">
+              </label><br>
+              <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
             </div>
 
             <div class="form-check mb-3">
-              <input type="checkbox" class="form-check-input" id="agree" name="agree" value="agree"> 
-              <label class="form-check-label" for="agree">Я погоджуюся із <a href="#" target="_blank">Політикою Конфіденційності</a></label>
+              <input type="checkbox" class="form-check-input" id="agree" name="agree" value="agree" required> 
+              <label class="form-check-label" for="agree">
+                Я погоджуюся із <a href="#" target="_blank">Політикою Конфіденційності</a><img src="./assets/icons/required.png" alt="Required" class="required-icon ">
+              </label>
             </div>
 
             <button type="submit" class="btn btn-primary rounded-pill" onclick="alert('Дякуємо за реєстрацію!')"> Подати заявку</button>

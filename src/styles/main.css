@@ -12013,4 +12013,8 @@ header {
   .navbar-nav .nav-item {
     margin: 0;
   }
+}
+.required-icon {
+  height: 7px; /* Adjust the size of the icon */
+  vertical-align: super;
 }/*# sourceMappingURL=main.css.map */
