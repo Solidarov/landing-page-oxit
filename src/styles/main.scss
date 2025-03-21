@@ -4,14 +4,12 @@
 // Include any default variable overrides here (though functions won't be available)
 $primary: #337AB7;
 $secondary: #F7F7F7;
+$font-family-base: "OpenSans";
+$font-size-base: 1rem;
 
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
 // Then add additional custom code here
-body{
-  font-family: "OpenSans";
-  font-size: 16px;
-}
 .nav-item{
   font-size: small;
   margin: 7px;
