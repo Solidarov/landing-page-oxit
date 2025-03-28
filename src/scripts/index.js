@@ -38,3 +38,79 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   });
+
+// Add to your index.js file inside the DOMContentLoaded event
+document.addEventListener('DOMContentLoaded', () => {
+  // Form validation code...
+  
+  // Phone number formatting logic...
+  
+  // Partner slider initialization
+  const partnerSliderContainer = document.querySelector('.partner-slider-container');
+  const slides = document.querySelectorAll('.partner-slider .swiper-slide');
+  
+  let partnerSwiper;
+  
+  function initSwiper() {
+    // Only initialize as a slider if there are more than 3 elements
+    const shouldInitializeSlider = slides.length > 3;
+    
+    if (shouldInitializeSlider) {
+      partnerSwiper = new Swiper('.partner-slider', {
+        spaceBetween: 20,
+        navigation:{
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        breakpoints: {
+          320: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
+          850: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          996: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          }
+        }
+      });
+      
+      // Show navigation and pagination
+      document.querySelector('.swiper-button-next').style.display = 'flex';
+      document.querySelector('.swiper-button-prev').style.display = 'flex';
+    } else {
+      // If 3 or fewer slides, destroy swiper if it exists and center the slides
+      if (partnerSwiper) {
+        partnerSwiper.destroy();
+        partnerSwiper = undefined;
+      }
+      
+      // Hide navigation and pagination
+      document.querySelector('.swiper-button-next').style.display = 'none';
+      document.querySelector('.swiper-button-prev').style.display = 'none';
+      
+      // Apply flexbox to center the slides
+      document.querySelector('.swiper-wrapper').classList.add('d-flex', 'justify-content-center');
+      
+      // Make each slide take appropriate width
+      slides.forEach(slide => {
+        slide.style.width = `calc(${100 / Math.min(slides.length, 3)}% - 20px)`;
+        slide.style.marginRight = '10px';
+        slide.style.marginLeft = '10px';
+      });
+    }
+  }
+  
+  // Initialize on page load
+  initSwiper();
+  
+  // Re-initialize on window resize
+  window.addEventListener('resize', initSwiper);
+});

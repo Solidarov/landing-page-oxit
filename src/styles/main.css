@@ -12014,7 +12014,25 @@ header {
     margin: 0;
   }
 }
+.hr-primary {
+  border-top: 2px solid #337AB7;
+  opacity: 1;
+}
+
 .required-icon {
   height: 7px; /* Adjust the size of the icon */
   vertical-align: super;
+}
+
+.partner-slider-container {
+  position: relative;
+  padding: 0 30px;
+}
+.partner-slider-container .card {
+  height: 100%;
+  transition: transform 0.3s;
+}
+.partner-slider-container .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }/*# sourceMappingURL=main.css.map */
