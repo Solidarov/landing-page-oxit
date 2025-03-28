@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
   function initSwiper() {
     // Only initialize as a slider if there are more than 3 elements
-    const shouldInitializeSlider = slides.length > 3;
+    const shouldInitializeSlider = slides.length > 3 || window.innerWidth <= 995;
     
     if (shouldInitializeSlider) {
       partnerSwiper = new Swiper('.partner-slider', {
@@ -61,10 +61,6 @@ document.addEventListener('DOMContentLoaded', () => {
         navigation:{
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
-        },
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
         },
         breakpoints: {
           320: {
