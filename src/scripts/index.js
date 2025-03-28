@@ -110,3 +110,18 @@ document.addEventListener('DOMContentLoaded', () => {
   // Re-initialize on window resize
   window.addEventListener('resize', initSwiper);
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  var swiper = new Swiper(".feedback-slider", {
+    spaceBetween: 30,
+    effect: "fade",
+    autoplay:{
+      delay: 2500,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
+});
