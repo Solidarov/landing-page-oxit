@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
       crossFade: true
     },
     autoplay:{
-      delay: 2500,
+      delay: 10000,
       disableOnInteraction: false,
     },
     pagination: {
@@ -128,4 +128,68 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     loop: true,
   });
+});
+
+// Global variable for the YouTube player
+var player;
+
+// This function must be in global scope for the YouTube API to call it
+function onYouTubeIframeAPIReady() {
+  player = new YT.Player('youtube-player', {
+    playerVars: {
+      'autoplay': 0,
+      'controls': 1,
+      'modestbranding': 1,
+      'rel': 0,
+      'playsinline': 1
+    },
+    videoId: '6taRNiJZIFA',
+    events: {
+      'onReady': onPlayerReady,
+      'onError': onPlayerError
+    }
+  });
+}
+
+function onPlayerReady(event) {
+  console.log('YouTube player ready');
+  // Optional: You can add custom functionality when the player is ready
+  
+  // Make player responsive by adjusting container rather than iframe directly
+  const responsive = () => {
+    const container = document.getElementById('youtube-container');
+    if (container) {
+      const width = container.clientWidth;
+      const height = width * 0.5625; // 16:9 aspect ratio
+      const playerElement = document.getElementById('youtube-player');
+      if (playerElement) {
+        playerElement.style.width = '100%';
+        playerElement.style.height = `${height}px`;
+      }
+    }
+  };
+  
+  responsive();
+  window.addEventListener('resize', responsive);
+}
+
+function onPlayerError(event) {
+  console.error('YouTube player error:', event.data);
+  // Handle error - maybe show a message to the user
+}
+
+// Load the YouTube API script
+document.addEventListener('DOMContentLoaded', () => {
+  // Create a container div for responsive sizing if it doesn't exist yet
+  const videoSection = document.getElementById('youtube-player').parentElement;
+  if (!videoSection.id) {
+    videoSection.id = 'youtube-container';
+    videoSection.className += ' position-relative ratio ratio-16x9';
+  }
+  
+  // Load the iframe API script
+  const tag = document.createElement('script');
+  tag.src = 'https://www.youtube.com/iframe_api';
+  const firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 });
