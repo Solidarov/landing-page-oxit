@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-  var swiper = new Swiper(".feedback-slider", {
+  const swiper = new Swiper(".feedback-slider", {
     spaceBetween: 30,
     effect: "fade",
     fadeEffect: {
