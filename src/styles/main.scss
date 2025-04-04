@@ -83,3 +83,17 @@ header {
   }
 }
 
+.blockquote {
+  &::before,
+  &::after {
+    display: none; /* Disable default quote marks */
+  }
+  
+  .position-relative {
+    min-height: 150px; /* Ensure enough space for quotes */
+  }
+}
+
+.swiper-slide {
+  padding: 1rem;
+}

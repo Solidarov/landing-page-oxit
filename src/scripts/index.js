@@ -115,6 +115,9 @@ document.addEventListener('DOMContentLoaded', () => {
   var swiper = new Swiper(".feedback-slider", {
     spaceBetween: 30,
     effect: "fade",
+    fadeEffect: {
+      crossFade: true
+    },
     autoplay:{
       delay: 2500,
       disableOnInteraction: false,
@@ -123,5 +126,6 @@ document.addEventListener('DOMContentLoaded', () => {
       el: ".swiper-pagination",
       clickable: true,
     },
+    loop: true,
   });
 });
