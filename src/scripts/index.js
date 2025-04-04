@@ -130,6 +130,25 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+  const mentorsSwiper = new Swiper(".mentors-slider", {
+    spaceBetween: 30,
+    effect: "fade",
+    fadeEffect: {
+      crossFade: true
+    },
+    autoplay:{
+      delay: 10000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    loop: true,
+  });
+});
+
 // Global variable for the YouTube player
 var player;
 
