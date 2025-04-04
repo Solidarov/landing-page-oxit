@@ -45,22 +45,23 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Phone number formatting logic...
   
-  // Partner slider initialization
-  const partnerSliderContainer = document.querySelector('.partner-slider-container');
-  const slides = document.querySelectorAll('.partner-slider .swiper-slide');
+  // course slider initialization
+  const courseSliderContainer = document.querySelector('.course-slider-container');
+  const slides = document.querySelectorAll('.course-slider .swiper-slide');
   
-  let partnerSwiper;
+  let courseSwiper;
   
   function initSwiper() {
     // Only initialize as a slider if there are more than 3 elements
     const shouldInitializeSlider = slides.length > 3 || window.innerWidth <= 995;
     
     if (shouldInitializeSlider) {
-      partnerSwiper = new Swiper('.partner-slider', {
+      courseSwiper = new Swiper('.course-slider', {
         spaceBetween: 20,
-        navigation:{
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
+        pagination: {
+          el: '.swiper-pagination',
+          dynamicBullets: true,
+          clickable: true,
         },
         breakpoints: {
           320: {
@@ -79,18 +80,17 @@ document.addEventListener('DOMContentLoaded', () => {
       });
       
       // Show navigation and pagination
-      document.querySelector('.swiper-button-next').style.display = 'flex';
-      document.querySelector('.swiper-button-prev').style.display = 'flex';
+      document.querySelector('.swiper-pagination').style.display = 'block';
+      
     } else {
       // If 3 or fewer slides, destroy swiper if it exists and center the slides
-      if (partnerSwiper) {
-        partnerSwiper.destroy();
-        partnerSwiper = undefined;
+      if (courseSwiper) {
+        courseSwiper.destroy();
+        courseSwiper = undefined;
       }
       
       // Hide navigation and pagination
-      document.querySelector('.swiper-button-next').style.display = 'none';
-      document.querySelector('.swiper-button-prev').style.display = 'none';
+      document.querySelector('.swiper-pagination').style.display = 'none';
       
       // Apply flexbox to center the slides
       document.querySelector('.swiper-wrapper').classList.add('d-flex', 'justify-content-center');
