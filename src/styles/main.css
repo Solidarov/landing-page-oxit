@@ -12046,4 +12046,11 @@ header {
 
 .swiper-slide {
   padding: 1rem;
+}
+
+.contact-icon {
+  height: 45px;
+  width: 45px;
+  margin-bottom: 10px;
+  filter: brightness(0) invert(1);
 }/*# sourceMappingURL=main.css.map */
