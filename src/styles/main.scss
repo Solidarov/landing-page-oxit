@@ -6,6 +6,7 @@ $primary: #337AB7;
 $secondary: #F7F7F7;
 $font-family-base: "OpenSans";
 $font-size-base: 1rem;
+$blockquote-font-size: $font-size-base;
 
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
