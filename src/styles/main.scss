@@ -10,20 +10,20 @@ $blockquote-font-size: $font-size-base;
 
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
-// Then add additional custom code here
+
 .nav-item{
   font-size: small;
   margin: 7px;
 }
 header {
-  position: relative; /* або fixed/sticky, якщо потрібно */
-  z-index: 1000; /* тінь буде поверх іншого контенту */
+  position: relative; 
+  z-index: 1000; 
 }
 .navbar-toggler {
-  border: none; /* Прибираємо обводку */
+  border: none;
 }
 .navbar-toggler-icon {
-  /* Використовуємо SVG з білими лініями */
+  
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 .navbar-toggler:focus,
@@ -104,4 +104,21 @@ header {
   width: 45px;
   margin-bottom: 10px;
   filter: brightness(0) invert(1);
+}
+
+// Add after your existing styles
+
+.btn-reverse-outline-primary {
+  // Default state: solid background (like btn-primary)
+  color: #fff;
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
+  transition: all 0.3s ease;
+  
+  // Hover state: outline style (like btn-outline-primary's default)
+  &:hover, &:focus, &:active {
+    color: var(--bs-primary);
+    background-color: transparent;
+    border-color: var(--bs-primary);
+  }
 }
