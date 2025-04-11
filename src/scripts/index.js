@@ -59,8 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
       courseSwiper = new Swiper('.course-slider', {
         spaceBetween: 20,
         pagination: {
-          el: '.swiper-pagination',
-          dynamicBullets: true,
+          el: '.course-pagination',
           clickable: true,
         },
         breakpoints: {
@@ -80,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
       
       // Show navigation and pagination
-      document.querySelector('.swiper-pagination').style.display = 'block';
+      document.querySelector('.course-pagination').style.display = 'block';
       
     } else {
       // If 3 or fewer slides, destroy swiper if it exists and center the slides
@@ -90,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       
       // Hide navigation and pagination
-      document.querySelector('.swiper-pagination').style.display = 'none';
+      document.querySelector('.course-pagination').style.display = 'none';
       
       // Apply flexbox to center the slides
       document.querySelector('.swiper-wrapper').classList.add('d-flex', 'justify-content-center');
@@ -123,7 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
       disableOnInteraction: false,
     },
     pagination: {
-      el: ".swiper-pagination",
+      el: ".feedback-pagination",
       clickable: true,
     },
     loop: true,
@@ -142,7 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
       disableOnInteraction: false,
     },
     pagination: {
-      el: ".swiper-pagination",
+      el: ".mentors-pagination",
       clickable: true,
     },
     loop: true,
